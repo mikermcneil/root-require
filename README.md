@@ -5,7 +5,10 @@ root-require
 
 ## How it do
 This lets you `require()` using a relative path from the root directory of the present module.
-It is not particularly efficient, since it uses `fs.*Sync` methods. So don't call it a whole bunch of times!
+
+> Keep in mind `require()` is synchronous.  And this library is not any more efficient-- (it uses `fs.*Sync` methods)
+> Just like when you use `require()`, you should be fine as long as you're doing this at the top of your file outside of any function declarations.
+
 
 ## Use Cases
 
