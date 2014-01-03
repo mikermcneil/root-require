@@ -10,9 +10,33 @@ This lets you `require()` using a relative path from the root directory of the p
 > Just like when you use `require()`, you should be fine as long as you're doing this at the top of your file outside of any function declarations.
 
 
-## Use Cases
 
-1. A file needs to move, and you want to easily be able to find/replace the references to it.
+## Usage
+
+Just once:
+```javascript
+var Sails = require('root-require')('lib/app');
+```
+
+More than once:
+```javascript
+var rootRequire = require('root-require');
+
+var Sails = rootRequire('lib/app');
+var Router = rootRequire('lib/router');
+var MiddlewareLibrary = rootRequire('lib/middleware');
+```
+
+
+
+## Why is this a good thing?
+
+It's easier to reason about the structure of your module when the paths are consistent.  The structure of your project becomes more declarative- dependencies are consistently referenced, irrespective of the user file's home in the directory structure.
+
+#### Problems w/ `require()`
+
+1. When you move a dependency file (_A<sub>x</sub>_) required by multiple files (_B<sub>i</sub>_), you have to find/replace the all references to _A<sub>x</sub>_.  This is normally hard, because the argument to the `require(...)` function depends on where the user file (_B<sub>i</sub>_) is located.
+2. When you move a file (_B<sub>x</sub>_) which depends on another file (_A<sub>x</sub>_), you normally have to update the `require()` call in _B<sub>x</sub>_ to reflect the new relative path from _B<sub>x</sub>_ to _A<sub>x</sub>_.
 
 e.g. Consider trying to change the path to `giggle.js` in an automated way:
 
@@ -45,21 +69,8 @@ var Giggle = require('root-require')('lib/wiggle/sniggle/giggle');
 ```
 
 
-## Usage
 
-Just once:
-```javascript
-var Sails = require('root-require')('lib/app');
-```
 
-More than once:
-```javascript
-var rootRequire = require('root-require');
-
-var Sails = rootRequire('lib/app');
-var Router = rootRequire('lib/router');
-var MiddlewareLibrary = rootRequire('lib/middleware');
-```
 
 
 ## Credit where credit is due
