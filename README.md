@@ -74,7 +74,7 @@ var Giggle = require('root-require')('lib/wiggle/sniggle/giggle');
 
 
 ## Credit where credit is due
-This is mainly a thin wrapper around `packpath` (https://github.com/jprichardson/node-packpath)-- this module just exists so we can do it in one line.
+This module is literally a 3-line wrapper around the awesome `packpath` module (https://github.com/jprichardson/node-packpath).  I just made this for convenience/ so I could have it in one line because I always forget how `path.join` works w/ Windows and all that.
 
 
 ## License
