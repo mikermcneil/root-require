@@ -1,0 +1,28 @@
+{
+  "name": "root-require",
+  "version": "0.0.0",
+  "description": "require() using a relative path from the root directory of the present module",
+  "main": "index.js",
+  "dependencies": {
+    "packpath": "~0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikermcneil/root-require.git"
+  },
+  "keywords": [
+    "root",
+    "require",
+    "relative"
+  ],
+  "author": "Mike McNeil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikermcneil/root-require/issues"
+  },
+  "homepage": "https://github.com/mikermcneil/root-require"
+}
