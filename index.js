@@ -14,8 +14,6 @@ var packpath = require('packpath');
  * 
  * @type {Function}
  */
-module.exports = function requireFromModuleRoot ( __dirname ) {
-	return function (relativePathFromModuleRoot) {
-		return require(path.join(packpath.self(),relativePathFromModuleRoot));
-	};
+module.exports = function requireFromModuleRoot ( relativePathFromModuleRoot ) {
+	return require(path.join(packpath.parent(),relativePathFromModuleRoot));
 };
