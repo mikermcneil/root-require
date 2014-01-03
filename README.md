@@ -1,5 +1,12 @@
 root-require
 ============
+> a more convenient require method for certain situations.
+
+
+## How it do
+This lets you `require()` using a relative path from the root directory of the present module.
+It is not particularly efficient, since it uses `fs.*Sync` methods. So don't call it a whole bunch of times!
+
 
 ## Usage
 
@@ -16,12 +23,6 @@ var Sails = rootRequire('lib/app');
 var Router = rootRequire('lib/router');
 var MiddlewareLibrary = rootRequire('lib/middleware');
 ```
-
-## Purpose
-a more convenient require method for certain situations.
-
-## How it do
-This lets you `require()` using a relative path from the root directory of the present module.
 
 
 ## Credit where credit is due
