@@ -1,11 +1,45 @@
 root-require
 ============
-> a more convenient require method for certain situations.
+> a more convenient require method for certain situations
 
 
 ## How it do
 This lets you `require()` using a relative path from the root directory of the present module.
 It is not particularly efficient, since it uses `fs.*Sync` methods. So don't call it a whole bunch of times!
+
+## Use Cases
+
+1. A file needs to move, and you want to easily be able to find/replace the references to it.
+
+e.g. Consider trying to change the path to `giggle.js` in an automated way:
+
+hard 
+```javascript
+// foo.js
+var Giggle = require('./wiggle/sniggle/giggle');
+
+// bar.js
+var Giggle = require('../../../../../wiggle/sniggle/giggle');
+
+// baz.js
+var Giggle = require('../../../../wiggle/sniggle/giggle');
+
+// 20 more files like this, 100 other files like `giggle.js`
+```
+
+easy
+```javascript
+// foo.js
+var Giggle = require('root-require')('lib/wiggle/sniggle/giggle');
+
+// bar.js
+var Giggle = require('root-require')('lib/wiggle/sniggle/giggle');
+
+// baz.js
+var Giggle = require('root-require')('lib/wiggle/sniggle/giggle');
+
+// 20 more files like this, 100 other files like `giggle.js`
+```
 
 
 ## Usage
