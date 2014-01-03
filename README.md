@@ -11,12 +11,12 @@ It is not particularly efficient, since it uses `fs.*Sync` methods. So don't cal
 ## Usage
 
 Just once:
-```
+```javascript
 var Sails = require('root-require')('lib/app');
 ```
 
 More than once:
-```
+```javascript
 var rootRequire = require('root-require');
 
 var Sails = rootRequire('lib/app');
