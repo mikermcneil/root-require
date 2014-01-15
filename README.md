@@ -1,6 +1,13 @@
 root-require
 ============
-> a more convenient require method for certain situations
+
+
+a more convenient require method for running **TESTS ONLY**.
+
+> ## WARNING:
+> THIS MODULE DOES NOT WORK ALL THE TIME.
+> I REPEAT. IT DOES NOT WORK ALL THE TIME.
+> IT WILL CAUSE YOU HEADACHES IF YOU USE IT IN TWO MODULES WHICH DEPEND ON ONE ANOTHER, BECAUSE NPM OPTIMIZES DEPENDENCIES.  AS LONG AS YOU ARE ONLY USING IT ONLY FOR TESTS, YOU SHOULD BE OK.
 
 
 ## How it do
