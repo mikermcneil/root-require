@@ -1,7 +1,7 @@
 {
   "name": "root-require",
   "version": "0.2.0",
-  "description": "require() using a relative path from the root directory of the present module",
+  "description": "For use in tests only! require() using a relative path from the root directory of the present module",
   "main": "index.js",
   "dependencies": {
     "packpath": "~0.1.0"
