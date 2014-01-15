@@ -4,10 +4,12 @@ root-require
 
 a more convenient require method for running **TESTS ONLY**.
 
-> ## WARNING:
-> THIS MODULE DOES NOT WORK ALL THE TIME.
-> I REPEAT. IT DOES NOT WORK ALL THE TIME.
-> IT WILL CAUSE YOU HEADACHES IF YOU USE IT IN TWO MODULES WHICH DEPEND ON ONE ANOTHER, BECAUSE NPM OPTIMIZES DEPENDENCIES.  AS LONG AS YOU ARE ONLY USING IT ONLY FOR TESTS, YOU SHOULD BE OK.
+> ### WARNING:
+> THIS MODULE PROBABLY DOES NOT WORK IN THE WAY YOU EXPECT IT TO WORK ALL THE TIME.
+> I REPEAT: IT HAS DIFFERENT BEHAVIOR BASED ON HOW IT'S BROUGHT IN AS A DEPENDENCY THAT WILL CAUSE YOU HEADACHES.  ESPECIALLY IF YOU USE IT IN TWO MODULES WHICH DEPEND ON ONE ANOTHER.  (this is because of the way npm optimizes dependencies, and this module doesn't address that, since it's for testing only.).
+>
+> That said, as long as you use this module as a **DEV DEPDENDENCY**, everything _should_ work as expected.  Sorry for the capslock.
+> ~Mike
 
 
 ## How it do
